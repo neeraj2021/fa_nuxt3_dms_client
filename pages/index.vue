@@ -11,6 +11,9 @@
       </select>
       <p>{{ $t("welcome") }}</p>
       <p>{{ $t("hello") }}</p>
+      <h1>
+        {{ $uuid }}
+      </h1>
     </form>
   </div>
 </template>

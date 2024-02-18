@@ -12,7 +12,6 @@ const axiosConfig = {
 const http = axios.create(axiosConfig);
 
 export default defineNuxtPlugin((nuxtApp) => {
-  console.log("axios plugin", nuxtApp);
   return {
     provide: {
       axios: http,
