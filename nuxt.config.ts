@@ -5,5 +5,20 @@ export default defineNuxtConfig({
   devServer: {
     port: 10023,
   },
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n"],
+  i18n: {
+    strategy: "no_prefix",
+    vueI18n: "./config/i18n.config.ts",
+    defaultLocale: "en",
+    locales: [
+      {
+        code: "en",
+        name: "English",
+      },
+      {
+        code: "hi",
+        name: "Hindi",
+      },
+    ],
+  },
 });
