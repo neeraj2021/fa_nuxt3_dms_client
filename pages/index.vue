@@ -11,15 +11,16 @@
       </select>
       <p>{{ $t("welcome") }}</p>
       <p>{{ $t("hello") }}</p>
-      <h1>
-        {{ $uuid }}
-      </h1>
+      <h1>{{ $uuid }}</h1>
+      <h1>Count - {{ count }}</h1>
+      <h1>Name - {{ name2 }}</h1>
     </form>
   </div>
 </template>
 
 <script lang="ts">
 import BaseMixin from "~/mixins/BaseMixin";
+import { mapGetters } from "vuex";
 
 export default defineComponent({
   mixins: [BaseMixin],
@@ -28,6 +29,13 @@ export default defineComponent({
       name: "Nuxt.jssss",
       locale: this.$i18n.locale,
     };
+  },
+
+  computed: {
+    ...mapGetters("neeraj", {
+      // count: "count",
+      name2: "name",
+    }),
   },
 
   watch: {
@@ -39,6 +47,7 @@ export default defineComponent({
   methods: {
     changeName() {
       this.name = "Nuxt.js";
+      console.log(this.$store.state.base.count);
     },
   },
 });
