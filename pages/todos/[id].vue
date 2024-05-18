@@ -23,6 +23,11 @@ export default defineComponent({
   methods: {
     async fetchTodo() {
       const { data } = await this.$axios.get(`/todos/${this.id}`);
+
+      const { data: neeraj } = await this.$axiosInventory.get(
+        `/todos/${this.id}`
+      );
+
       this.todo = data;
     },
   },

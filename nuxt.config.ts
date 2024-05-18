@@ -1,9 +1,11 @@
+import { headOptions } from "./config/head.config";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
   devServer: {
-    port: 10023,
+    port: 3005,
   },
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n"],
   i18n: {
@@ -20,5 +22,9 @@ export default defineNuxtConfig({
         name: "Hindi",
       },
     ],
+  },
+
+  app: {
+    head: headOptions,
   },
 });
