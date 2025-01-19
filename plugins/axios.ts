@@ -14,6 +14,10 @@ const http = axios.create(axiosConfig);
 http.interceptors.request.use((config) => {
   console.log("Making request to: ", config.url);
 
+  // Add Bearer token to request headers
+
+  config.headers.Authorization = `Bearer ABCDEFGHIJKLMNOPQRSTUVWXYZ`;
+
   // Redirect to login page if not authenticated if got 401 status code
 
   return config;

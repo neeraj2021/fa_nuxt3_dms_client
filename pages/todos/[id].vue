@@ -24,7 +24,7 @@ export default defineComponent({
     async fetchTodo() {
       const { data } = await this.$axios.get(`/todos/${this.id}`);
 
-      const { data: neeraj } = await this.$axiosInventory.get(
+      const { data: neeraj } = await this.$axios.get(
         `/todos/${this.id}`
       );
 

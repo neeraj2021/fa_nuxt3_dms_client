@@ -1,8 +1,16 @@
 <template>
   <div>
     <h1 class="bg-red-500">Home</h1>
-    <p>My name is {{ name }}</p>
+    <p>My name is {{ name2 }}</p>
     <button @click="changeName">Change name</button>
+    <div>
+      <toggle-button
+        v-model="value"
+        @change="() => console.log('changed', value)"
+        offLabel="Off"
+        onLabel="On"
+      ></toggle-button>
+    </div>
     <p>This is the {{ message }}</p>
     <form>
       <select v-model="locale">
@@ -28,13 +36,18 @@ export default defineComponent({
     return {
       name: "Nuxt.jssss",
       locale: this.$i18n.locale,
+      value: "",
     };
   },
 
   computed: {
     ...mapGetters("neeraj", {
-      // count: "count",
+      count: "count",
       name2: "name",
+    }),
+
+    ...mapGetters("base", {
+      count: "count",
     }),
   },
 

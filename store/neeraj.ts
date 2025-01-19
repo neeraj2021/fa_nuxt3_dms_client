@@ -1,7 +1,7 @@
 export default {
   namespaced: true,
   state: {
-    name: "Neeraj",
+    name: "Neeraj2222",
   },
 
   mutations: {
