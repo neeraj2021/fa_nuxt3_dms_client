@@ -29,9 +29,10 @@
 <script lang="ts">
 import BaseMixin from "~/mixins/BaseMixin";
 import { mapGetters } from "vuex";
+import mixins from "../utils";
 
-export default defineComponent({
-  mixins: [BaseMixin],
+// Using Options API
+export default mixins(BaseMixin).extends({
   data() {
     return {
       name: "Nuxt.jssss",
@@ -61,6 +62,8 @@ export default defineComponent({
     changeName() {
       this.name = "Nuxt.js";
       console.log(this.$store.state.base.count);
+      console.log(this.message);
+      this.$store.commit("base/increment");
     },
   },
 });
