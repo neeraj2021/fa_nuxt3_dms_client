@@ -2,6 +2,36 @@
   <div>
     <h1 class="bg-red-500">Home</h1>
     <p>My name is {{ name2 }}</p>
+
+    <div class="w-12">
+      <!-- Solid icon -->
+      <font-awesome-icon :icon="['fas', 'bars']" style="font-size: 14px" />
+
+      <font-awesome-icon
+        :icon="['fa', 'check']"
+        class="h-4 w-4 text-gray-500"
+      />
+
+      <font-awesome-icon
+        :icon="['fas', 'chevron-left']"
+        style="
+          font-size: 8px;
+          padding: 0;
+          margin: 0;
+          color: #0074d9;
+          width: 16px;
+          height: 16px;
+        "
+        @click="changeName"
+      />
+
+      <!-- Regular icon -->
+      <font-awesome-icon :icon="['far', 'user']" />
+
+      <!-- Brand icon -->
+      <font-awesome-icon :icon="['fab', 'github']" style="color: #0074d9" />
+    </div>
+
     <button @click="changeName">Change name</button>
     <div>
       <toggle-button
@@ -21,7 +51,8 @@
       <p>{{ $t("hello") }}</p>
       <h1>{{ $uuid }}</h1>
       <h1>Count - {{ count }}</h1>
-      <h1>Name - {{ name2 }}</h1>
+      <h1>Name - {{ name }}</h1>
+      <h1>Name 2 - {{ name2 }}</h1>
     </form>
   </div>
 </template>
@@ -30,6 +61,10 @@
 import BaseMixin from "~/mixins/BaseMixin";
 import { mapGetters } from "vuex";
 import mixins from "../utils";
+
+definePageMeta({
+  layout: "default",
+});
 
 // Using Options API
 export default mixins(BaseMixin).extends({

@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   devServer: {
     port: 3005,
   },
+  plugins: ['~/plugins/fontawesome'],
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n"],
   i18n: {
     strategy: "no_prefix",
