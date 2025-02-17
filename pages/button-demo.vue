@@ -1,10 +1,13 @@
 <template>
-  <div class="button-demo">
-    <h1>Button Component Demo</h1>
+  <div class="demo-container">
+    <h1 class="demo-title">Button Component</h1>
 
-    <section>
-      <h2>Button Variants</h2>
-      <div class="button-group">
+    <section class="demo-section">
+      <h2 class="demo-section-title"><span>🎨</span> Button Variants</h2>
+      <p class="demo-description">
+        Different button variants to suit your needs
+      </p>
+      <div class="demo-group">
         <BaseButton variant="contained" color="primary" @click="handleClick"
           >Contained Button</BaseButton
         >
@@ -15,9 +18,10 @@
       </div>
     </section>
 
-    <section>
-      <h2>Button Colors</h2>
-      <div class="button-group">
+    <section class="demo-section">
+      <h2 class="demo-section-title"><span>🎨</span> Button Colors</h2>
+      <p class="demo-description">Different button colors to suit your needs</p>
+      <div class="demo-group">
         <BaseButton variant="contained" color="primary">Primary</BaseButton>
         <BaseButton variant="contained" color="secondary">Secondary</BaseButton>
         <BaseButton variant="contained" color="error">Error</BaseButton>
@@ -25,9 +29,12 @@
       </div>
     </section>
 
-    <section>
-      <h2 class="text-error text-2xl">Button Variants</h2>
-      <div class="button-group">
+    <section class="demo-section">
+      <h2 class="demo-section-title"><span>🎨</span> Button Variants</h2>
+      <p class="demo-description">
+        Different button variants to suit your needs
+      </p>
+      <div class="demo-group">
         <BaseButton variant="primary" @click="handleClick"
           >Primary Button</BaseButton
         >
@@ -43,18 +50,20 @@
       </div>
     </section>
 
-    <section>
-      <h2>Button Sizes</h2>
-      <div class="button-group">
+    <section class="demo-section">
+      <h2 class="demo-section-title"><span>🎨</span> Button Sizes</h2>
+      <p class="demo-description">Different button sizes to suit your needs</p>
+      <div class="demo-group">
         <BaseButton size="small">Small Button</BaseButton>
         <BaseButton size="medium">Medium Button</BaseButton>
         <BaseButton size="large">Large Button</BaseButton>
       </div>
     </section>
 
-    <section>
-      <h2>Button States</h2>
-      <div class="button-group">
+    <section class="demo-section">
+      <h2 class="demo-section-title"><span>🎨</span> Button States</h2>
+      <p class="demo-description">Different button states to suit your needs</p>
+      <div class="demo-group">
         <BaseButton :loading="isLoading" @click="toggleLoading">
           {{ isLoading ? "Loading..." : "Click to Load" }}
         </BaseButton>
@@ -62,9 +71,12 @@
       </div>
     </section>
 
-    <section>
-      <h2>Buttons with Prefix and Suffix</h2>
-      <div class="button-group">
+    <section class="demo-section">
+      <h2 class="demo-section-title">
+        <span>🎨</span> Buttons with Prefix and Suffix
+      </h2>
+      <p class="demo-description">Buttons with prefix and suffix icons</p>
+      <div class="demo-group">
         <BaseButton>
           <template #prefix>👋</template>
           Welcome
@@ -88,9 +100,10 @@
       </div>
     </section>
 
-    <section>
-      <h2>PDF Download Button</h2>
-      <div class="button-group">
+    <section class="demo-section">
+      <h2 class="demo-section-title"><span>🎨</span> PDF Download Button</h2>
+      <p class="demo-description">Button to download PDF files</p>
+      <div class="demo-group">
         <BaseButton variant="secondary">
           <template #prefix>
             <svg
@@ -113,9 +126,12 @@
       </div>
     </section>
 
-    <section>
-      <h2>Buttons with Custom Classes and Styles</h2>
-      <div class="button-group">
+    <section class="demo-section">
+      <h2 class="demo-section-title">
+        <span>🎨</span> Buttons with Custom Classes and Styles
+      </h2>
+      <p class="demo-description">Buttons with custom classes and styles</p>
+      <div class="demo-group">
         <BaseButton
           custom-class="shadow-lg hover:shadow-xl"
           variant="contained"
@@ -161,31 +177,6 @@ const toggleLoading = () => {
 };
 </script>
 
-<style scoped>
-.button-demo {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-h1 {
-  color: #1f2937;
-  margin-bottom: 2rem;
-}
-
-h2 {
-  color: #374151;
-  margin: 1.5rem 0 1rem;
-}
-
-section {
-  margin-bottom: 2rem;
-}
-
-.button-group {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
+<style>
+@import "@/assets/demo.css";
 </style>
